@@ -31,8 +31,9 @@ fev1_sampled
 # Build a plot that shows the relationship between FEV1 and age
 
 fev1_plot <- ggplot(data = fev1_sampled, 
-                    aes(x = ..., y = ...)) +
-    geom_point()
+                    aes(x = age, y = FEV1)) +
+    geom_point()+
+  geom_smooth(method = "loess", se = FALSE)
 
 fev1_plot
 
@@ -40,7 +41,13 @@ fev1_plot
 
 # Add meaningful labels for the $x$ and $y$ axes, including units, and change the plot's colour theme from the default.
 
-# Add a smooth line of best fit to the plot. 
+fev1_plot <- fev1_plot +
+  labs(
+    title = "FEV1 vs Age Scatter Plot",
+    x = "Age of participants",
+    y = "FEV1 values"
+  )
+
 
 
 # Activity 7
@@ -76,4 +83,3 @@ fev1_plot
 # Build a regression model to look at how FEV1 varies with age, accounting for the
 # structure by including a random effect mean for each id and a spline curve for
 # the effect of age
-
