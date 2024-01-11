@@ -48,6 +48,12 @@ fev1_plot <- fev1_plot +
     y = "FEV1 values"
   )
 
+fev1_plot <- ggplot(data = fev1_sampled, 
+                    aes(x = age, y = FEV1)) +
+  geom_point(aes(color=id)) + 
+  labs(y = 'FEV1', x = 'age (years)') + 
+  geom_smooth() +
+  theme(panel.background = element_rect(fill = "white", colour = "grey50"))
 
 
 # Activity 7
