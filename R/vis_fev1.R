@@ -83,3 +83,9 @@ fev1_plot <- fev1_plot +
 # Build a regression model to look at how FEV1 varies with age, accounting for the
 # structure by including a random effect mean for each id and a spline curve for
 # the effect of age
+install.packages("usethis")
+library(usethis)
+usethis::use_git_config(
+  user.name = "ucheynna",
+  user.email = "lyoprecy@gmail.com",
+  github.user = "ucheynna")
